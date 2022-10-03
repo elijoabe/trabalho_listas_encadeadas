@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+
+struct Aluno{
+        string nome;
+        float matricula;
+        string curso;
+    };
+
+bool lerNome(){
+    struct Aluno registro;
+
+    cout << "Digite um nome: " << endl;
+    cin >> registro.nome;
+
+
+    if(registro.nome== "fim"){
+        exit(1);
+    }else{
+        cout << "Digite uma matricula: " << endl;
+        cin >> registro.matricula;
+        cin.ignore();
+        cout << "Digite um curso : " << endl;
+        cin >> registro.curso;
+
+        cout << "Nome: " << registro.nome << endl;
+        cout << "Matricula: " << registro.matricula << endl;
+        cout << "Curso: " << registro.curso << endl;
+
+        return true;
+    }
+
+}
+
+
+int main()
+{
+
+
+    do{
+        lerNome();
+    }while(lerNome());
+
+    return 1;
+}
